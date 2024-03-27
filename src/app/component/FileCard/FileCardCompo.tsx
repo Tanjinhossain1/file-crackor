@@ -24,7 +24,7 @@ const CustomRating = ({ value }: { value: number }) => {
 export default function FileCardCompo({data,index}:{data: FileData, index: number}) {
   return (
    <Grid key={index} xs={12} xl={8}>
-                  <Paper sx={{ p: 1 }} elevation={3}>
+                  <Paper sx={{ p: 1 }} elevation={1}>
                     <Grid container>
                       <Grid xs={12} sm={1}>
                         <Image
