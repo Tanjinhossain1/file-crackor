@@ -60,6 +60,17 @@ function Navbar() {
               ml: 5
             }}
           >
+           <AlignHorizontalLeftIcon
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1,mt:2 }}
+          />
+            <Grid sx={{ mt: 1 }} container>
+              {/* <Grid xs={3.7}></Grid> */}
+              <Grid xs={12}>
+                <SearchBar />
+              </Grid>
+              {/* <Grid xs={4}></Grid> */}
+            </Grid>
+
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -69,7 +80,7 @@ function Navbar() {
               color="inherit"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> 
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -93,13 +104,12 @@ function Navbar() {
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
+              
             </Menu>
           </Box>
 
           {/* mobile  */}
-          <AlignHorizontalLeftIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-          />
+         
 
           <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" },gap:4 }}>
             {pages.map((page, index) => (
