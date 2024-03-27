@@ -59,27 +59,35 @@ export default function FileCardCompo({data,index}:{data: FileData, index: numbe
                       <Grid xs={0.2}></Grid>
 
                       <Grid
-                        sx={{ borderRight: "2px solid lightGray" }}
+                        sx={{  borderRight: {sm:"2px solid lightGray",xs:"none"},my:{xs:2,sm:0}  }}
                         xs={12}
                         sm={2}
                       >
+                          <Grid container>
+                          <Grid xs={6} sm={12}>
                         <Typography sx={{ fontWeight: 600, display: "flex" }}>
                           <span>
                             <WindowIcon sx={{ color: "#0080ff" }} />
                           </span>
                           <span>{data.category.primary.name}</span>
+                          
                         </Typography>
+                          </Grid>
+                          <Grid sx={{textAlign:"end"}} xs={6} sm={12}>
                         <Typography
                           sx={{
                             display: "flex",
                             gap: 1,
                             alignItems: "center",
+                            justifyContent:{xs:"end",sm:"start"},
                             fontSize: 13,
                           }}
                         >
                           <CloudDownloadIcon sx={{ color: "#bdbdbd" }} />{" "}
                           <span>{data.totalDownload}</span>
                         </Typography>
+                        </Grid>
+                          </Grid>
                       </Grid>
                       <Grid xs={0.2}></Grid>
 
@@ -107,8 +115,8 @@ export default function FileCardCompo({data,index}:{data: FileData, index: numbe
                       </Grid>
                       <Grid xs={0.2}></Grid>
                       <Grid
-                        sx={{ alignItems: "center", display: "flex" }}
-                        xs={6}
+                        sx={{ alignItems: "center", display: "flex",justifyContent:"end" }}
+                        xs={5.5}
                         sm={1}
                       >
                         <Typography

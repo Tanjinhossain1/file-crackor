@@ -57,8 +57,7 @@ function Navbar() {
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              ml: 5,
-              ":hover": { bgcolor: "red" },
+              ml: 5
             }}
           >
             <IconButton
