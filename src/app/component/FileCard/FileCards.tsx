@@ -1,121 +1,117 @@
 "use client";
-import { Grid, Paper, Typography, withStyles } from "@mui/material";
+import { Button, Grid, Paper, Typography, withStyles } from "@mui/material";
 import React from "react";
-import { SAMPLE_DATA } from "./SampleData";
+import { SAMPLE_DATA_OF_ANDROID, SAMPLE_DATA_OF_MACOS, SAMPLE_DATA_OF_WINDOW } from "./SampleData";
 import { FileData } from "../../../../types/fileCard";
-import Image from "next/image";
-import Divider from "@mui/material/Divider";
-import WindowIcon from "@mui/icons-material/Window";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import Rating from "@mui/material/Rating";
-import StarIcon from "@mui/icons-material/Star";
+import FileCardCompo from "./FileCardCompo";
 
-// Function to calculate the fractional part of a number
-const fractionalPart = (num: number) => num - Math.floor(num);
-
-// Function to render the custom rating
-const CustomRating = ({ value }: { value: number }) => {
-  return (
-    <Rating
-      name="custom-rating"
-      value={value}
-      precision={0.1}
-      readOnly
-      icon={<StarIcon />}
-    />
-  );
-};
 export default function FileCards() {
-
   return (
     <>
-          <Grid alignItems={"center"}  gap={3} container>
-            {" "}
-            <Grid xs={0} sm={0} xl={0.5}></Grid>
-            <Grid container xs={11} gap={3}>
-            {SAMPLE_DATA.map((data: FileData, index: number) => {
-        return (
-            <Grid key={index} xs={12} xl={5.5} >
-              <Paper sx={{ p: 1 }} elevation={3}>
-                <Grid container>
-                  <Grid  xs={12} sm={1}>
-                    <Image
-                      alt={data.title}
-                      src={data.image}
-                      width={60}
-                      height={60}
-                    />
-                  </Grid>
-
-                  <Grid sx={{borderRight:"2px solid lightGray"}} xs={12} sm={5}>
-                    <Typography sx={{ fontWeight: 600 }}>
-                      {data.title}
-                    </Typography>
-                    <Typography sx={{ fontWeight: 300, fontSize: 12 }}>
-                      {data.description}
-                    </Typography>
-                    <Typography
-                      sx={{ fontWeight: 300, fontSize: 12, color: "#239436" }}
-                    >
-                      {data.category.subCategory.name}
-                    </Typography>
-                  </Grid>
-                  <Grid xs={0.2}></Grid>
-                  
-                  <Grid sx={{borderRight:"2px solid lightGray"}} xs={12} sm={2}>
-                    <Typography sx={{ fontWeight: 600, display: "flex" }}>
-                      <span>
-                        <WindowIcon sx={{ color: "#0080ff" }} />
-                      </span>
-                      <span>{data.category.primary.name}</span>
-                    </Typography>
-                    <Typography
-                      sx={{
-                        display: "flex",
-                        gap: 1,
-                        alignItems: "center",
-                        fontSize: 13,
-                      }}
-                    >
-                      <CloudDownloadIcon sx={{ color: "#bdbdbd" }} />{" "}
-                      <span>{data.totalDownload}</span>
-                    </Typography>
-                  </Grid>
-                  <Grid xs={0.2}></Grid>
-                  
-                  <Grid sx={{borderRight:"2px solid lightGray"}} xs={6} sm={2.3}>
-                    <Typography sx={{ fontWeight: 600, display: "flex" }}>
-                      Rating
-                    </Typography>
-                    <Typography
-                      sx={{
-                        display: "flex",
-                        gap: 1,
-                        alignItems: "center",
-                        fontSize: 13,
-                      }}
-                    >
-                      {" "}
-                      <span>
-                        <CustomRating value={data.rating} />
-                      </span>
-                    </Typography>
-                  </Grid>
-                  <Grid xs={0.2}></Grid>
-                  <Grid sx={{alignItems:"center", display:"flex"}} xs={6} sm={1}>
-                    <Typography sx={{ fontWeight: 600, display: "flex",alignItems:"center" }}>
-                      {data.mbSize}  MB
-                    </Typography>
-                     
-                  </Grid>
+      <Grid container>
+        {/* view all button card */}
+        <Grid sx={{ mb: 2 }} container>
+          <Grid xs={0} sm={1} xl={1}></Grid>
+          <Grid sx={{ borderLeft: "4px solid #fa00ed" }} xs={12} sm={7.35}>
+            <Paper sx={{ p: 2.5 }} elevation={3}>
+              <Grid container>
+                <Grid xs={6}>
+                  <Typography sx={{ fontWeight: 600 }}>Windows</Typography>
                 </Grid>
-              </Paper>
-            </Grid>
-            );
-          })}
-            </Grid>
-          <Grid xs={0} sm={0} lg={0.5}></Grid>
+                <Grid xs={5}></Grid>
+                <Grid xs={1}>
+                  <Button
+                    size="small"
+                    sx={{ color: "#fa00ed", borderColor: "#fa00ed" }}
+                    variant="outlined"
+                  >
+                    View All
+                  </Button>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
         </Grid>
+        {/* show all window data file card */}
+        <Grid alignItems={"center"} container>
+          {" "}
+          <Grid xs={0} sm={1} xl={1}></Grid>
+          <Grid container xs={12} sm={11} gap={2}>
+            {SAMPLE_DATA_OF_WINDOW.map((data: FileData, index: number) => {
+              return <FileCardCompo key={index} data={data} index={index} />;
+            })}
+          </Grid> 
+        </Grid>
+
+        {/* {this is for mac os } */}
+        <Grid sx={{ mb: 2,mt:5 }} container>
+          <Grid xs={0} sm={1} xl={1}></Grid>
+          <Grid sx={{ borderLeft: "4px solid #fa00ed" }} xs={12} sm={7.35}>
+            <Paper sx={{ p: 2.5 }} elevation={3}>
+              <Grid container>
+                <Grid xs={6}>
+                  <Typography sx={{ fontWeight: 600 }}>MacOs</Typography>
+                </Grid>
+                <Grid xs={5}></Grid>
+                <Grid xs={1}>
+                  <Button
+                    size="small"
+                    sx={{ color: "#fa00ed", borderColor: "#fa00ed" }}
+                    variant="outlined"
+                  >
+                    View All
+                  </Button>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
+        {/* show all window data file card */}
+        <Grid  alignItems={"center"} container>
+          {" "}
+          <Grid xs={0} sm={1} xl={1}></Grid>
+          <Grid container xs={12} sm={11} gap={2}>
+            {SAMPLE_DATA_OF_MACOS.map((data: FileData, index: number) => {
+              return <FileCardCompo key={index} data={data} index={index} />;
+            })}
+          </Grid>
+          {/* <Grid xs={0} sm={0} lg={0.5}></Grid> */}
+        </Grid>
+        {/* {this is for Android } */}
+        <Grid sx={{ mb: 2,mt:5 }} container>
+          <Grid xs={0} sm={1} xl={1}></Grid>
+          <Grid sx={{ borderLeft: "4px solid #fa00ed" }} xs={12} sm={7.35}>
+            <Paper sx={{ p: 2.5 }} elevation={3}>
+              <Grid container>
+                <Grid xs={6}>
+                  <Typography sx={{ fontWeight: 600 }}>Android</Typography>
+                </Grid>
+                <Grid xs={5}></Grid>
+                <Grid xs={1}>
+                  <Button
+                    size="small"
+                    sx={{ color: "#fa00ed", borderColor: "#fa00ed" }}
+                    variant="outlined"
+                  >
+                    View All
+                  </Button>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
+        {/* show all window data file card */}
+        <Grid  alignItems={"center"} container>
+          {" "}
+          <Grid xs={0} sm={1} xl={1}></Grid>
+          <Grid container xs={12} sm={11} gap={2}>
+            {SAMPLE_DATA_OF_ANDROID.map((data: FileData, index: number) => {
+              return <FileCardCompo key={index} data={data} index={index} />;
+            })}
+          </Grid>
+          {/* <Grid xs={0} sm={0} lg={0.5}></Grid> */}
+        </Grid>
+      </Grid>
     </>
   );
 }
