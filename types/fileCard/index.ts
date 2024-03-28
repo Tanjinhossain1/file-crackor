@@ -10,6 +10,7 @@ export interface Category {
   }
   
   export interface FileData {
+    id:number;
     image: string;
     title: string;
     description: string;

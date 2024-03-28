@@ -6,7 +6,8 @@ import StarIcon from "@mui/icons-material/Star";
 
 import WindowIcon from "@mui/icons-material/Window";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import { FileData } from '../../../../types/fileCard';
+import { FileData } from '../../../../types/fileCard'; 
+import { useRouter } from 'next/navigation';
 
 // Function to render the custom rating
 const CustomRating = ({ value }: { value: number }) => {
@@ -22,6 +23,7 @@ const CustomRating = ({ value }: { value: number }) => {
   };
 
 export default function FileCardCompo({data,index}:{data: FileData, index: number}) {
+  const history = useRouter()
   return (
    <Grid key={index} xs={12} xl={8}>
                   <Paper sx={{ p: 1 }} elevation={1}>
@@ -40,10 +42,10 @@ export default function FileCardCompo({data,index}:{data: FileData, index: numbe
                         xs={12}
                         sm={5}
                       >
-                        <Typography sx={{ fontWeight: 600 }}>
+                        <Typography onClick={()=>history.push(`/windows/${data.id}`)} sx={{ fontWeight: 600,cursor:"pointer" }}>
                           {data.title}
                         </Typography>
-                        <Typography sx={{ fontWeight: 300, fontSize: 12 }}>
+                        <Typography onClick={()=>history.push(`/windows/${data.id}`)} sx={{ fontWeight: 300, fontSize: 12,cursor:"pointer" }}>
                           {data.description}
                         </Typography>
                         <Typography

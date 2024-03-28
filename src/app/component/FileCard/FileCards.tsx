@@ -10,7 +10,7 @@ export default function FileCards() {
     <>
       <Grid sx={{mt:6}} container>
         {/* view all button card */}
-        <Grid sx={{ mb: 2 }} container>
+        {/* <Grid sx={{ mb: 2 }} container>
           <Grid xs={0} sm={1} xl={1}></Grid>
           <Grid sx={{ borderLeft: "4px solid #fa00ed" }} xs={12} sm={9} xl={7.35}>
             <Paper sx={{ p: 2.5 }} elevation={3}>
@@ -31,9 +31,9 @@ export default function FileCards() {
               </Grid>
             </Paper>
           </Grid>
-        </Grid>
+        </Grid> */}
         {/* show all window data file card */}
-        <Grid sx={{mt:3}}  alignItems={"center"} container>
+        {/* <Grid sx={{mt:3}}  alignItems={"center"} container>
           {" "}
           <Grid xs={0} sm={1} xl={1}></Grid>
           <Grid container xs={12} sm={9} xl={11} gap={2}>
@@ -41,10 +41,10 @@ export default function FileCards() {
               return <FileCardCompo key={index} data={data} index={index} />;
             })}
           </Grid> 
-        </Grid>
+        </Grid> */}
 
         {/* {this is for mac os } */}
-        <Grid sx={{ mb: 2,mt:8 }} container>
+        {/* <Grid sx={{ mb: 2,mt:8 }} container>
           <Grid xs={0} sm={1} xl={1}></Grid>
           <Grid sx={{ borderLeft: "4px solid #fa00ed" }} xs={12} sm={9} xl={7.35}>
             <Paper sx={{ p: 2.5 }} elevation={3}>
@@ -65,9 +65,9 @@ export default function FileCards() {
               </Grid>
             </Paper>
           </Grid>
-        </Grid>
+        </Grid> */}
         {/* show all window data file card */}
-        <Grid sx={{mt:3}}  alignItems={"center"} container>
+        {/* <Grid sx={{mt:3}}  alignItems={"center"} container>
           {" "}
           <Grid xs={0} sm={1} xl={1}></Grid>
           <Grid container xs={12} sm={9} xl={11} gap={2}>
@@ -75,8 +75,8 @@ export default function FileCards() {
               return <FileCardCompo key={index} data={data} index={index} />;
             })}
           </Grid>
-          {/* <Grid xs={0} sm={0} lg={0.5}></Grid> */}
-        </Grid>
+        </Grid> */}
+           
         {/* {this is for Android } */}
         <Grid sx={{ mb: 2,mt:8 }} container>
           <Grid xs={0} sm={1} xl={1}></Grid>
