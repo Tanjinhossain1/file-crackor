@@ -10,7 +10,7 @@ import { FileData } from '../../../../types/fileCard';
 import { useRouter } from 'next/navigation';
 
 // Function to render the custom rating
-const CustomRating = ({ value }: { value: number }) => {
+export const CustomRating = ({ value }: { value: number }) => {
     return (
       <Rating
         name="custom-rating"
@@ -42,10 +42,10 @@ export default function FileCardCompo({data,index}:{data: FileData, index: numbe
                         xs={12}
                         sm={5}
                       >
-                        <Typography onClick={()=>history.push(`/windows/${data.id}`)} sx={{ fontWeight: 600,cursor:"pointer" }}>
+                        <Typography onClick={()=>history.push(`/${data.category.primary.type}/${data.id}`)} sx={{ fontWeight: 600,cursor:"pointer" }}>
                           {data.title}
                         </Typography>
-                        <Typography onClick={()=>history.push(`/windows/${data.id}`)} sx={{ fontWeight: 300, fontSize: 12,cursor:"pointer" }}>
+                        <Typography onClick={()=>history.push(`/${data.category.primary.type}/${data.id}`)} sx={{ fontWeight: 300, fontSize: 12,cursor:"pointer" }}>
                           {data.description}
                         </Typography>
                         <Typography
@@ -128,7 +128,7 @@ export default function FileCardCompo({data,index}:{data: FileData, index: numbe
                             alignItems: "center",
                           }}
                         >
-                          {data.mbSize} MB
+                          {data.mbSize}
                         </Typography>
                       </Grid>
                     </Grid>

@@ -1,0 +1,22 @@
+.editorjs-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .editorjs-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .editorjs-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .editorjs-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .editorjs-table tr:hover {
+    background-color: #ddd;
+  }
+  

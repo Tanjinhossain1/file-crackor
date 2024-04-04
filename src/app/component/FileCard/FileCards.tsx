@@ -4,6 +4,7 @@ import React from "react";
 import { SAMPLE_DATA_OF_ANDROID, SAMPLE_DATA_OF_MACOS, SAMPLE_DATA_OF_WINDOW } from "./SampleData";
 import { FileData } from "../../../../types/fileCard";
 import FileCardCompo from "./FileCardCompo";
+import EditorJSRenderer from "../EditorDataDisplay";
 
 export default function FileCards() {
   return (

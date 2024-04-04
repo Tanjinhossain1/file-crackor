@@ -17,5 +17,13 @@ export interface Category {
     category: Category;
     totalDownload: number;
     rating: number;
-    mbSize: number;
+    mbSize: string;
+    articleImage?:string;
+    article: any[]
+    appCreatedBy?: string;
+    version?:string
+    licenseType?:string,
+    releaseDate?:string,
+    languages?:string,
+    uploadedBy?:string ,
   }

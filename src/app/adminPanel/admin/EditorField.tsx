@@ -63,7 +63,7 @@ export default function EditorField({ onEditorData }: { onEditorData: any }) {
         editorRef.current = null;
       }
     };
-  }, []); // Run effect only once after initial render
+  }, [onEditorData]); // Run effect only once after initial render
 
   return (
     <div style={{ backgroundColor: "white" }} id="editorjs">
